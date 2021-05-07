@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ketee_jishs.tennis.ui.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/CoachMainInfoLayoutStyle"
+        tools:background="@color/color_primary_variant">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/coachFCS"
+            style="@style/CoachFCSTextStyle"
+            android:text="@{viewModel.coachName}"
+            tools:text="Василий Козлов" />
+
+        <LinearLayout style="@style/LocationLayoutStyle">
+
+            <androidx.appcompat.widget.AppCompatImageView style="@style/FlagStyle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/locationInfo"
+                style="@style/LocationTextStyle"
+                android:text="@{viewModel.coachLocation}"
+                tools:text="Россия, Москва" />
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/coachInfo"
+            style="@style/CoachInfoTextStyle"
+            android:text="@{viewModel.coachDescription}"
+            tools:text="Крутой тренер с сильной правой рукой а может и левой" />
+    </LinearLayout>
+</layout>

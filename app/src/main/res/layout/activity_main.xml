@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ketee_jishs.tennis.ui.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.MainActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mapBackground"
+            style="@style/MapBackgroundStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/uploadButton"
+                    style="@style/BackButtonStyle.UploadButtonStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/informationLayout"
+                    style="@style/InformationLayoutStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <fragment
+                        android:id="@+id/coachMainInfoFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:name="com.ketee_jishs.tennis.ui.fragments.CoachMainInfoFragment"
+                        tools:layout="@layout/fragment_coach_main_info"
+                        tools:ignore="FragmentTagUsage" />
+
+                    <fragment
+                        android:id="@+id/coachAdditionalInfoFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:name="com.ketee_jishs.tennis.ui.fragments.CoachAdditionalInfoFragment"
+                        tools:layout="@layout/fragment_coach_additional_info"
+                        tools:ignore="FragmentTagUsage" />
+
+                    <fragment
+                        android:id="@+id/feedbacksFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:name="com.ketee_jishs.tennis.ui.fragments.FeedbacksFragment"
+                        tools:layout="@layout/fragment_feedbacks"
+                        tools:ignore="FragmentTagUsage" />
+
+                    <fragment
+                        android:id="@+id/studentsFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:name="com.ketee_jishs.tennis.ui.fragments.StudentsFragment"
+                        tools:layout="@layout/fragment_students"
+                        tools:ignore="FragmentTagUsage" />
+                </LinearLayout>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/coachPhoto"
+                    style="@style/CoachPhotoStyle"
+                    android:src="@{viewModel.coachPhoto}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/CoachTennisBallStyle"
+                    app:layout_constraintBottom_toBottomOf="@+id/coachPhoto"
+                    app:layout_constraintEnd_toEndOf="@+id/coachPhoto"
+                    app:layout_constraintStart_toStartOf="@+id/coachPhoto"
+                    app:layout_constraintTop_toTopOf="@+id/coachPhoto" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/backButton"
+            style="@style/BackButtonStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/buttonsLayout"
+            style="@style/ButtonsLayoutStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/messageButton"
+                style="@style/BottomButtonsTextStyle.MessageButtonStyle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bookingButton"
+                style="@style/BottomButtonsTextStyle.MessageButtonStyle.BookingButtonStyle" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/invitePersonButton"
+                style="@style/InvitePersonButton" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

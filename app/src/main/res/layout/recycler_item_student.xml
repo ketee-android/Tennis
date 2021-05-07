@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="student"
+            type="com.ketee_jishs.tennis.retrofit.Students" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:background="@color/color_primary_variant">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/studentPhoto"
+            style="@style/StudentPhotoStyle"
+            app:layout_constraintEnd_toEndOf="@+id/studentName"
+            app:layout_constraintStart_toStartOf="@+id/studentName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/tools_photo_background" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/StudentTennisBallStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/studentPhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/studentPhoto" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/studentName"
+            style="@style/StudentNameTextStyle"
+            android:text="@{student.studentName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/studentPhoto"
+            tools:text="Василий" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

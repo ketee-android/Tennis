@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="feedback"
+            type="com.ketee_jishs.tennis.retrofit.Feedbacks" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/color_primary_variant">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/commentatorPhoto"
+            style="@style/CommentatorPhotoStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/tools_photo_background" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/commentatorName"
+            style="@style/CommentatorNameTextStyle"
+            android:text="@{feedback.commentatorName}"
+            app:layout_constraintStart_toEndOf="@+id/commentatorPhoto"
+            app:layout_constraintTop_toTopOf="@+id/commentatorPhoto"
+            tools:text="Василий Козлов" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/givenScore"
+            style="@style/GivenScoreTextStyle"
+            app:layout_constraintStart_toEndOf="@+id/commentatorPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/commentatorName"
+            tools:text="5 *" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/feedbackText"
+            style="@style/FeedbackTextStyle"
+            android:text="@{feedback.feedbackText}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/givenScore"
+            tools:text="A retired nurse, Karen recently moved to the area, where construction of houses has only recently begun. There is a forest nearby, and wild animals " />
+
+        <View
+            android:id="@+id/separationLine"
+            style="@style/SeparationViewStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

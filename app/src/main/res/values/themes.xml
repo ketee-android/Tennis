@@ -1,0 +1,421 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Tennis" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="android:navigationBarColor">@color/color_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MapBackgroundStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/map_background_layout_height</item>
+        <item name="android:layout_marginBottom">@dimen/map_background_margin_bottom</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/map_background</item>
+    </style>
+
+    <style name="BackButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/top_button_corners</item>
+        <item name="android:layout_marginTop">@dimen/back_button_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/back_button_margin_start</item>
+        <item name="android:padding">@dimen/back_button_padding</item>
+        <item name="android:src">@drawable/ic_back</item>
+        <item name="backgroundTint">@color/top_button_background</item>
+        <item name="iconTint">@color/header_text_color</item>
+    </style>
+
+    <style name="BackButtonStyle.UploadButtonStyle">
+        <item name="android:layout_marginStart">@dimen/upload_button_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/upload_button_margin_end</item>
+        <item name="android:padding">@dimen/upload_button_padding</item>
+        <item name="android:src">@drawable/ic_upload</item>
+    </style>
+
+    <style name="InformationLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">@dimen/information_layout_margin_top</item>
+        <item name="android:background">@drawable/information_layout_background</item>
+    </style>
+
+    <style name="CoachPhotoStyle">
+        <item name="android:layout_width">@dimen/coach_photo_layout_width</item>
+        <item name="android:layout_height">@dimen/coach_photo_layout_height</item>
+        <item name="android:layout_marginTop">@dimen/coach_photo_margin_top</item>
+        <item name="placeholderImage">@drawable/ic_wait</item>
+        <item name="placeholderImageScaleType">center</item>
+        <item name="backgroundImage">@drawable/tools_photo_background</item>
+        <item name="roundedCornerRadius">@dimen/coach_photo_corner_radius</item>
+    </style>
+
+    <style name="CoachTennisBallStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_tennis_ball</item>
+        <item name="android:layout_marginStart">@dimen/coach_tennis_margin_start</item>
+        <item name="layout_constraintVertical_bias">@dimen/coach_tennis_ball_vertical_bias</item>
+    </style>
+
+    <style name="ButtonsLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/buttons_layout_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/buttons_layout_margin_end</item>
+        <item name="android:layout_marginBottom">@dimen/buttons_layout_margin_bottom</item>
+        <item name="android:background">@drawable/bottom_menu_background</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="BottomButtonsTextStyle">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/bottom_button_text_size</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="BottomButtonsTextStyle.MessageButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/message_button_text</item>
+        <item name="android:layout_marginStart">@dimen/message_button_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/message_button_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/message_button_margin_bottom</item>
+        <item name="android:paddingStart">@dimen/message_button_padding_start</item>
+        <item name="android:paddingTop">@dimen/message_button_padding_top</item>
+        <item name="android:paddingEnd">@dimen/message_button_padding_end</item>
+        <item name="android:paddingBottom">@dimen/message_button_padding_bottom</item>
+        <item name="android:background">@drawable/bottom_button_shape</item>
+        <item name="backgroundTint">@color/accented_button_background_color</item>
+    </style>
+
+    <style name="BottomButtonsTextStyle.MessageButtonStyle.BookingButtonStyle">
+        <item name="android:text">@string/booking_button_text</item>
+        <item name="android:layout_marginStart">@dimen/booking_button_margin_start</item>
+    </style>
+
+    <style name="InvitePersonButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/invite_person_button_margins</item>
+        <item name="android:layout_marginTop">@dimen/invite_person_button_margins</item>
+        <item name="android:layout_marginEnd">@dimen/invite_person_button_margins</item>
+        <item name="android:layout_marginBottom">@dimen/invite_person_button_margins</item>
+        <item name="android:background">@drawable/bottom_button_shape</item>
+        <item name="android:padding">@dimen/invite_person_padding</item>
+        <item name="android:src">@drawable/ic_add</item>
+        <item name="backgroundTint">@color/invite_person_button_background</item>
+        <item name="iconTint">@color/header_text_color</item>
+    </style>
+
+    <style name="CoachMainInfoLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CoachFCSTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/coach_fcs_margin_top</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/coach_fcs_text_size</item>
+    </style>
+
+    <style name="LocationLayoutStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/location_layout_margin_top</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="FlagStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/ic_flag</item>
+    </style>
+
+    <style name="LocationTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">@dimen/location_text_margin_start</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/location_text_size</item>
+    </style>
+
+    <style name="CoachInfoTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center|bottom</item>
+        <item name="android:layout_marginStart">@dimen/coach_info_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/coach_info_margin_top</item>
+        <item name="android:layout_marginEnd">@dimen/coach_info_margin_end</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display4</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/coach_info_text_size</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="CoachAdditionalInfoLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/coach_additional_info_margin_bottom</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="InfoSecondContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/info_second_container_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/info_second_container_margin_horizontal</item>
+        <item name="android:layout_weight">@dimen/info_second_container_weight</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="InfoSecondContainerStyle.InfoFirstContainerStyle">
+        <item name="android:layout_weight">@dimen/info_first_container_weight</item>
+        <item name="android:layout_marginTop">@dimen/info_first_container_margin_top</item>
+    </style>
+
+    <style name="RatingContainerStyle">
+        <item name="android:layout_width">@dimen/rating_container_layout_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/rating_container_margin_top</item>
+        <item name="android:layout_marginEnd">@dimen/rating_container_margin_end</item>
+        <item name="android:padding">@dimen/rating_container_padding</item>
+        <item name="android:layout_weight">@dimen/rating_container_weight</item>
+        <item name="android:background">@drawable/left_text_background</item>
+    </style>
+
+    <style name="AgeContainerStyle" parent="RatingContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/age_container_layout_height</item>
+        <item name="android:background">@drawable/right_text_background</item>
+        <item name="android:paddingBottom">@dimen/age_container_padding_bottom</item>
+        <item name="android:layout_marginEnd">@dimen/age_container_margin_end</item>
+    </style>
+
+    <style name="GenderContainerStyle" parent="AgeContainerStyle">
+        <item name="android:layout_marginTop">@dimen/gender_container_margin_top</item>
+    </style>
+
+    <style name="HeightContainerStyle" parent="RatingContainerStyle">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/height_container_margin_top</item>
+        <item name="android:paddingBottom">@dimen/height_container_padding_bottom</item>
+        <item name="android:layout_marginEnd">@dimen/height_container_margin_end</item>
+    </style>
+
+    <style name="ArmContainerStyle" parent="HeightContainerStyle">
+        <item name="android:layout_marginStart">@dimen/arm_container_margin_start</item>
+        <item name="android:background">@drawable/right_text_background</item>
+        <item name="android:paddingTop">@dimen/arm_container_padding_top</item>
+    </style>
+
+    <style name="GobletIconsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/goblet_icon_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/goblet_icon_margin_start</item>
+        <item name="android:src">@drawable/ic_goblet</item>
+    </style>
+
+    <style name="CakeIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/cake_icon_margin_end</item>
+        <item name="android:src">@drawable/ic_cake</item>
+    </style>
+
+    <style name="GenderIconStyle" parent="CakeIconStyle">
+        <item name="android:layout_marginEnd">@dimen/gender_icon_margin_end</item>
+        <item name="android:src">@drawable/ic_gender</item>
+    </style>
+
+    <style name="HeightIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_height</item>
+    </style>
+
+    <style name="ArmIconStyle" parent="HeightIconStyle">
+        <item name="android:src">@drawable/ic_arm</item>
+    </style>
+
+    <style name="InnerContainerStyle">
+        <item name="android:layout_width">@dimen/inner_container_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">@dimen/inner_container_weight</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="InformationHeaderTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/information_header_text_size</item>
+    </style>
+
+    <style name="AgeHeaderTextStyle" parent="InformationHeaderTextStyle">
+        <item name="android:textSize">@dimen/age_header_text_size</item>
+    </style>
+
+    <style name="RatingHeaderTextStyle" parent="AgeHeaderTextStyle">
+        <item name="android:layout_marginTop">@dimen/rating_header_margin_top</item>
+    </style>
+
+    <style name="HeaderDescriptionInformationTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/header_description_information_margin_top</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/additional_info_text_color</item>
+        <item name="android:textSize">@dimen/header_description_information_text_size</item>
+    </style>
+
+    <style name="AgeDescriptionInformationTextStyle" parent="HeaderDescriptionInformationTextStyle">
+        <item name="android:layout_marginTop">@dimen/age_description_information_margin_top</item>
+    </style>
+
+    <style name="RatingDescriptionInformationTextStyle" parent="HeaderDescriptionInformationTextStyle">
+        <item name="android:layout_marginTop">@dimen/rating_description_information_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/rating_description_information_margin_bottom</item>
+        <item name="layout_constraintVertical_bias">@dimen/rating_description_information_vertical_bias</item>
+    </style>
+
+    <style name="LeftHeaderDescriptionTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/left_header_description_margin_start</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/additional_info_text_color</item>
+        <item name="android:textSize">@dimen/left_header_description_text_size</item>
+    </style>
+
+    <style name="FeedbackLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/feedback_layout_margin_bottom</item>
+    </style>
+
+    <style name="StudentsLayoutStyle" parent="FeedbackLayoutStyle">
+        <item name="android:paddingBottom">@dimen/students_layout_margin_bottom</item>
+    </style>
+
+    <style name="RecyclerLayoutHeaderTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/recycler_layout_header_margin_start</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/recycler_layout_header_text_size</item>
+    </style>
+
+    <style name="RecyclerLayoutAdditionalInfoTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/recycler_layout_additional_info_margin_end</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/green_color</item>
+        <item name="android:textSize">@dimen/recycler_layout_additional_info_text_size</item>
+    </style>
+
+    <style name="FeedbackRecyclerViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:nestedScrollingEnabled">false</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="StudentsRecyclerViewStyle" parent="FeedbackRecyclerViewStyle">
+        <item name="android:nestedScrollingEnabled">true</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="StudentPhotoStyle" parent="CommentatorPhotoStyle">
+        <item name="android:layout_width">@dimen/student_photo_width</item>
+        <item name="android:layout_height">@dimen/student_photo_height</item>
+        <item name="android:layout_marginTop">@dimen/student_photo_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/student_photo_margin_start</item>
+    </style>
+
+    <style name="CommentatorNameTextStyle" parent="InformationHeaderTextStyle">
+        <item name="android:layout_marginStart">@dimen/commentator_name_margin_start</item>
+        <item name="android:textSize">@dimen/commentator_name_text_size</item>
+    </style>
+
+    <style name="GivenScoreTextStyle" parent="CommentatorNameTextStyle">
+        <item name="android:layout_marginTop">@dimen/given_score_text_margin_top</item>
+        <item name="android:textColor">@color/icon_color</item>
+    </style>
+
+    <style name="FeedbackTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/feedback_text_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/feedback_text_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/feedback_text_margin_end</item>
+        <item name="android:textColor">@color/feedback_text_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textSize">@dimen/feedback_text_size</item>
+    </style>
+
+    <style name="SeparationViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/separation_view_height</item>
+        <item name="android:layout_marginTop">@dimen/separation_view_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/separation_view_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/separation_view_margin_horizontal</item>
+        <item name="android:background">@color/item_background_color</item>
+    </style>
+
+    <style name="CommentatorPhotoStyle" parent="CoachPhotoStyle">
+        <item name="android:layout_width">@dimen/commentator_photo_width</item>
+        <item name="android:layout_height">@dimen/commentator_photo_height</item>
+        <item name="android:layout_marginTop">@dimen/commentator_photo_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/commentator_photo_margin_start</item>
+        <item name="placeholderImageScaleType">fitCenter</item>
+    </style>
+
+    <style name="StudentTennisBallStyle">
+        <item name="android:layout_width">@dimen/student_tennis_ball_width</item>
+        <item name="android:layout_height">@dimen/student_tennis_ball_height</item>
+        <item name="android:src">@drawable/ic_tennis_ball</item>
+        <item name="layout_constraintHorizontal_bias">@dimen/student_tennis_ball_horizontal_bias</item>
+        <item name="layout_constraintVertical_bias">@dimen/student_tennis_ball_vertical_bias</item>
+    </style>
+
+    <style name="StudentNameTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/student_name_text_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/student_name_text_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/student_name_text_margin_bottom</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/header_text_color</item>
+        <item name="android:textSize">@dimen/student_name_text_size</item>
+    </style>
+</resources>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="100dp">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ketee_jishs.tennis.ui.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/CoachAdditionalInfoLayoutStyle"
+        tools:background="@color/color_primary_variant">
+
+        <LinearLayout
+            style="@style/InfoSecondContainerStyle.InfoFirstContainerStyle"
+            android:baselineAligned="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ratingContainer"
+                style="@style/RatingContainerStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NestedWeights">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/gobletIcon"
+                    style="@style/GobletIconsStyle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/ratingHeader"
+                    style="@style/RatingHeaderTextStyle"
+                    android:text="@{viewModel.amountOfFeedbacks}"
+                    app:layout_constraintStart_toStartOf="@+id/gobletIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/gobletIcon"
+                    tools:text="38" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/ratingTextView"
+                    style="@style/LeftHeaderDescriptionTextStyle"
+                    android:text="@string/rating_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/ratingHeader"
+                    app:layout_constraintStart_toEndOf="@+id/ratingHeader" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/rating_bar_margin_top"
+                    android:isIndicator="true"
+                    android:numStars="6"
+                    android:progressTint="@color/rating_stars_color"
+                    android:rating="6"
+                    app:layout_constraintStart_toStartOf="@+id/ratingHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingHeader" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/rating"
+                    style="@style/RatingDescriptionInformationTextStyle"
+                    android:text="@string/rating"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout style="@style/InnerContainerStyle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ageContainer"
+                    style="@style/AgeContainerStyle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cakeIcon"
+                        style="@style/CakeIconStyle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ageHeader"
+                        style="@style/AgeHeaderTextStyle"
+                        android:text="@{viewModel.coachAge}"
+                        app:layout_constraintBottom_toBottomOf="@+id/cakeIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/cakeIcon"
+                        tools:text="38" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ageTextView"
+                        style="@style/AgeDescriptionInformationTextStyle"
+                        android:text="@string/age_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/ageHeader"
+                        app:layout_constraintTop_toBottomOf="@+id/ageHeader" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/genderContainer"
+                    style="@style/GenderContainerStyle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/genderIcon"
+                        style="@style/GenderIconStyle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/genderHeader"
+                        style="@style/InformationHeaderTextStyle"
+                        android:text="@{viewModel.coachGender}"
+                        app:layout_constraintBottom_toBottomOf="@+id/genderIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/genderIcon"
+                        tools:text="Мужской" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/genderTextView"
+                        style="@style/HeaderDescriptionInformationTextStyle"
+                        android:text="@string/gender_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/genderHeader"
+                        app:layout_constraintTop_toBottomOf="@+id/genderHeader" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/InfoSecondContainerStyle"
+            android:baselineAligned="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/heightContainer"
+                style="@style/HeightContainerStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NestedWeights">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/heightIcon"
+                    style="@style/HeightIconStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/heightHeader"
+                    style="@style/InformationHeaderTextStyle"
+                    android:text="@{viewModel.coachHeight}"
+                    app:layout_constraintBottom_toBottomOf="@+id/heightIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/heightIcon"
+                    tools:text="180" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/unitOfMeasure"
+                    style="@style/LeftHeaderDescriptionTextStyle"
+                    android:text="@string/unit_of_measure_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/heightHeader"
+                    app:layout_constraintStart_toEndOf="@+id/heightHeader" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/heightTextView"
+                    style="@style/HeaderDescriptionInformationTextStyle"
+                    android:text="@string/height_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/heightHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/heightHeader"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/armContainer"
+                style="@style/ArmContainerStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/armIcon"
+                    style="@style/ArmIconStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/armHeader"
+                    style="@style/InformationHeaderTextStyle"
+                    android:text="@{viewModel.coachActiveArm}"
+                    app:layout_constraintBottom_toBottomOf="@+id/armIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/armIcon"
+                    tools:text="Правая" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mainArmTextView"
+                    style="@style/HeaderDescriptionInformationTextStyle"
+                    android:text="@string/main_arm_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/armHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/armHeader" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

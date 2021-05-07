@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tennis</string>
+    <string name="message_button_text">Сообщение</string>
+    <string name="booking_button_text">Забронировать</string>
+    <string name="rating_text">Оценок</string>
+    <string name="rating">Рейтинг</string>
+    <string name="age_text">Лет</string>
+    <string name="gender_text">Пол</string>
+    <string name="unit_of_measure_text">См</string>
+    <string name="height_text">Рост</string>
+    <string name="main_arm_text">Преобладающая рука</string>
+    <string name="feedbacks">Отзывы</string>
+    <string name="Students">Ученики</string>
+    <string name="hide_feedbacks">Скрыть</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ketee_jishs.tennis.ui.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/StudentsLayoutStyle"
+        tools:background="@color/color_primary_variant">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/feedbackHeader"
+            style="@style/RecyclerLayoutHeaderTextStyle"
+            android:text="@string/Students"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/moreFeedback"
+            style="@style/RecyclerLayoutAdditionalInfoTextStyle"
+            android:text="@{viewModel.allStudents}"
+            app:layout_constraintBottom_toBottomOf="@+id/feedbackHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Все ученики (8)" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/studentsRecyclerView"
+            style="@style/StudentsRecyclerViewStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackHeader"
+            tools:itemCount="15"
+            tools:listitem="@layout/recycler_item_student" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
